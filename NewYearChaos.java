@@ -75,8 +75,9 @@ public class NewYearChaos {
 		minimumBribes(q); */
 		
 		
-		minimumBribes(ReadFile.arrayOfData());
-		
+		//minimumBribes(ReadFile.arrayOfData());
+		int arr[] = new int[]{2,1,5,3,4};
+		minimumBribes(arr);
 		
 
 	}
