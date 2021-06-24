@@ -3,6 +3,14 @@ import java.util.Map;
 
 public class NewYearChaos {
 	
+	/**
+	 * Condition 1 : You are in correct place no action required 
+	 * Condition 2 : Either you can bribe at max 2 person in front of you
+	 * 				 If you bribe you could progress to person standing in front of you or max 2
+	 * Condition 3: If you bribe more than one person you can return by printing too chaotic
+	 * 
+	 * @param q
+	 */
 	static void minimumBribes(int[] q) {
         
         int[] e = new int[q.length];
