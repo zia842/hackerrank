@@ -3,6 +3,10 @@ import java.util.Scanner;
 
 public class RansomNote {
 	
+	public RansomNote(){
+		super();
+	}
+	
 	static void checkMagazine(String[] magazine, String[] note) {
 
 		Hashtable<String, Integer> magazineTable = new Hashtable<String, Integer>(); 
@@ -54,6 +58,65 @@ public class RansomNote {
 			}
 			
 		}
+
+    }
+	
+	static boolean canConstructLetter(String text, String note) {
+
+		Hashtable<Character, Integer> magazineTable = new Hashtable<Character, Integer>(); 
+		
+		if(text!=null && text.length() > 0) {
+			
+			for(Character s : text.toCharArray()) {
+				if(magazineTable.containsKey(s)) {
+					Integer count = magazineTable.get(s);
+					count = count + 1;
+					magazineTable.put(s, Integer.valueOf(count));
+				}
+				else 
+				{
+					magazineTable.put(s, Integer.valueOf(1));
+				}
+			}
+			
+		}
+		
+		if(note!=null && note.length() > 0) {
+			
+			boolean doesNotExist = false;
+			for(Character s : note.toCharArray()) {
+				if(magazineTable.containsKey(s)) {
+					Integer count = magazineTable.get(s);
+					if(count > 0) 
+					{
+						count = count - 1;
+						magazineTable.put(s, Integer.valueOf(count));
+					}
+					else 
+					{
+						//System.out.println("No");
+						//doesNotExist = true;
+						//break;
+						return false;
+					}
+				}
+				else 
+				{
+					//System.out.println("No");
+					//doesNotExist = true;
+					//break;
+					return false;
+				}
+			}
+			
+			if(!doesNotExist) {
+				//System.out.println("Yes");
+				return true;
+			}
+			
+		}
+		
+		return true;
 
     }
 	
