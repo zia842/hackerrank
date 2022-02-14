@@ -69,8 +69,8 @@ public class HowManyWords {
 	
 	public static void main(String []args) {
 		HowManyWords h = new HowManyWords();
-		System.out.println(h.howManyHackerRank("How many eggs are in a half-dozen, 13"));
-		System.out.println(h.howManyHackerRank("he is a good programmer, he won 865 competitions, but sometimes he dont. What do you think? All test-cases should pass. Done-done?"));
+		System.out.println(h.howMany("How many eggs are in a half-dozen, 13"));
+		System.out.println(h.howMany("he is a good programmer, he won 865 competitions, but sometimes he dont. What do you think? All test-cases should pass. Done-done?"));
 	}
 
 }
